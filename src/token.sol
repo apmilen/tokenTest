@@ -4,5 +4,8 @@ import "erc20/base.sol";
 
 contract TestToken is ERC20Base {
 
-    function TestToken( uint initial_balance ) ERC20Base(initial_balance) {}
+    function TestToken( uint initial_balance ) ERC20Base(initial_balance) {
+        _balances[msg.sender] = initial_balance;
+        _supply = initial_balance;
+    }
 }
